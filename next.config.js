@@ -20,8 +20,6 @@ const getPathsForPosts = () => {
     }, {});
 };
 
-// console.log(Mode);
-
 /**
  * @type {import('next').NextConfig}
  */
@@ -34,12 +32,12 @@ const nextConfig = {
     });
     return configuration;
   },
-  // exportPathMap: async function (defaultPathMap) {
-  //   return {
-  //     ...defaultPathMap,
-  //     ...getPathsForPosts(),
-  //   };
-  // },
+  exportPathMap: async function (defaultPathMap) {
+    return {
+      ...defaultPathMap,
+      ...getPathsForPosts(),
+    };
+  },
 };
 
 module.exports = nextConfig;

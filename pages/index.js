@@ -1,12 +1,11 @@
 import { Component } from 'react';
 import Head from 'next/head';
-// import Link from 'next/link';
 import { attributes, html } from '../content/home.md';
 
 export default class Home extends Component {
   render() {
     const { title, cats } = attributes;
-    console.log('consolefuckinglog', attributes);
+
     return (
       <>
         <Head>
@@ -15,7 +14,7 @@ export default class Home extends Component {
         <h1>{attributes.title}</h1>
         <article>
           <h1>{title}</h1>
-          {/* <HomeContent /> */}
+          {/* <HomeContent />  */}
           <ul>
             {cats.map((cat, k) => (
               <li key={k}>

@@ -1,13 +1,9 @@
 backend:
   name: github
-<<<<<<< HEAD
-  branch: vlzuiev/netlify-cms-test
-media_folder: static/img
-=======
+  branch: master
   repo: vlzuiev/netlify-cms-test
 media_folder: public/img
 public_folder: img
->>>>>>> 7418724... Initial commit
 slug:
   encoding: 'ascii'
   clean_accents: true
