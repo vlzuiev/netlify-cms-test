@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
+
+import { AppProps } from 'next/app';
+
 import Layout from '../components/layout';
 
-const MyApp = ({ Component, pageProps }) => {
+const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <Layout>
       <Component {...pageProps} />

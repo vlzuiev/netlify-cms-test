@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
+
 import Link from 'next/link';
 
-const Layout = ({ children }) => {
+const Layout: FC = ({ children }) => {
   return (
-    <React.Fragment>
+    <>
       <nav>
-        <Link href={'/'}>
+        <Link href="/">
           <a>home</a>
         </Link>
-        <Link href={'/blog'}>
+        <Link href="/blog">
           <a>blog</a>
         </Link>
-        <Link href={'/about'}>
+        <Link href="/about">
           <a>about</a>
         </Link>
       </nav>
@@ -31,7 +32,7 @@ const Layout = ({ children }) => {
           flex-direction: column;
         }
       `}</style>
-    </React.Fragment>
+    </>
   );
 };
 

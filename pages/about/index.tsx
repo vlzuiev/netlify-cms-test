@@ -1,11 +1,14 @@
 import React from 'react';
 
+import { NextPage } from 'next';
+
 import content from '../../content/about.md';
 
-const About = () => {
+const About: NextPage = () => {
   const { attributes, html } = content;
+
   return (
-    <React.Fragment>
+    <>
       <h1>{attributes.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: html }} />
       <style jsx>{`
@@ -14,7 +17,8 @@ const About = () => {
           text-align: center;
         }
       `}</style>
-    </React.Fragment>
+    </>
   );
 };
+
 export default About;
