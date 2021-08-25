@@ -15,7 +15,7 @@ The app can be started locally using following commands:
    - Start the app
 
 The client lives at [`localhost:3000/`](http://localhost:3000/)
-and cms at [`http://localhost:3000/admin/index.htm`](http://localhost:3000/admin/index.htm).
+and cms at [`http://localhost:3000/admin/index.htm`](http://localhost:3000/admin/index.html).
 
 # How it works
 
