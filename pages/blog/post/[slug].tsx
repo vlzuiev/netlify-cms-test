@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { NextPage, NextPageContext } from 'next';
-import Img from 'next/image';
 
 interface PostProps {
   blogpost: any;
@@ -18,7 +17,7 @@ const Post: NextPage<PostProps> = ({ blogpost }) => {
     <>
       <article>
         <h1>{title}</h1>
-        <Img src={thumbnail} width="100" height="100" />
+        <img src={thumbnail} width="100" height="100" />
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </article>
       <style jsx>{`
@@ -35,7 +34,7 @@ const Post: NextPage<PostProps> = ({ blogpost }) => {
 
 Post.getInitialProps = async ({ query }: NextPageContext) => {
   const { slug } = query;
-  const blogpost = await import(`../../../content/blogPosts/${slug}.md`).catch((error) => null);
+  const blogpost = await import(`../../../content/blogPosts/${slug}.md`).catch(() => null);
 
   return { blogpost };
 };

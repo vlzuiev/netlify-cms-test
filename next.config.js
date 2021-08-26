@@ -1,3 +1,6 @@
+const withPlugins = require('next-compose-plugins');
+const withPWA = require('next-pwa');
+const optimizedImages = require('next-optimized-images');
 const fs = require('fs');
 const blogPostsFolder = './content/blogPosts';
 
@@ -40,4 +43,27 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withPlugins(
+  [
+    [
+      [
+        optimizedImages,
+        {
+          optimizeImagesInDev: true,
+          responsive: {
+            adapter: require('responsive-loader/sharp'),
+          },
+        },
+      ],
+      [
+        withPWA,
+        {
+          pwa: {
+            dest: 'public',
+          },
+        },
+      ],
+    ],
+  ],
+  nextConfig
+);

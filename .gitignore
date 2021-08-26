@@ -5,3 +5,7 @@ node_modules/
 out/
 
 .history
+dist
+
+# Local Netlify folder
+.netlify

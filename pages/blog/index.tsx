@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { NextPage, NextPageContext } from 'next';
-import Img from 'next/image';
 import Link from 'next/link';
 
 const importBlogPosts = async (): Promise<any> => {
@@ -31,7 +30,9 @@ const Blog: NextPage<BlogProps> = (props) => {
         return (
           <Link key={post.attributes.title} href={`blog/post/${post.slug}`}>
             <a>
-              <Img src={post.attributes.thumbnail} width="100" height="100" />
+              <img
+                src={require('../../public/img/activate_deactivate.png?resize&sizes[]=640&sizes[]=740&sizes[]=828&sizes[]=1080&sizes[]=1920&sizes[]=2048&sizes[]=3840&format=webp')}
+              />
               <h2>{post.attributes.title}</h2>
             </a>
           </Link>
