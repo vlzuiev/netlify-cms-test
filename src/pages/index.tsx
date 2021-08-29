@@ -26,7 +26,7 @@ const Home: FC<HomeData> = ({ title, source }) => {
     <>
       <Head>
         <title>Netlify CMS && Next.js Starter</title>
-        <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
+        <Script async src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
       </Head>
       <nav>
         <Link href="/">

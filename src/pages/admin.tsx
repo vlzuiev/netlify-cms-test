@@ -3,7 +3,7 @@ import { FC } from 'react';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import dynamic from 'next/dynamic';
 
-import { config } from '../admin/config';
+import { config } from '../admin/cmsConfig';
 
 const Cms = dynamic(
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment

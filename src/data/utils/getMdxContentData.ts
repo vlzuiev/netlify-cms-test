@@ -16,7 +16,6 @@ export async function getMdxSourceData<Data>(contentPath: string): Promise<Sourc
   const source = fs.readFileSync(aboutPath);
   const { content, data } = matter(source);
 
-  console.log('contentdasdsa', content);
   return {
     data: data as Data,
     source: await serialize(content),
