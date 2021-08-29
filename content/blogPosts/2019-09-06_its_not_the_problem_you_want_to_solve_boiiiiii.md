@@ -1,7 +1,7 @@
 ---
 title: A blog post with picture of dog
 date: 2019-09-06T08:28:44.549Z
-thumbnail: ./img/puppy-and-adult-dog.jpg
+thumbnail: img/77544323.png
 ---
 
 ## Unfortunately, that's it.
