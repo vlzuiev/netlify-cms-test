@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "npx netlify-cms-proxy-server & next dev",
     "build": "next build",
     "start": "next start",
     "export": "next build && next export -o ./dist"
@@ -13,20 +13,22 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@material-ui/core": "^4.12.3",
-    "gray-matter": "^4.0.3",
-    "imagemin-optipng": "^8.0.0",
-    "netlify-cms-app": "^2.15.39",
+    "@material-ui/core": "4.12.3",
+    "@mdx-js/runtime": "1.6.22",
+    "gray-matter": "4.0.3",
+    "imagemin-optipng": "8.0.0",
+    "netlify-cms-app": "2.15.39",
     "next": "^11.1.0",
-    "next-compose-plugins": "^2.2.1",
-    "next-optimized-images": "^2.6.2",
+    "next-compose-plugins": "2.2.1",
+    "next-mdx-remote": "3.0.4",
+    "next-optimized-images": "2.6.2",
     "next-pwa": "^3.1.5",
-    "pino": "^6.13.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "responsive-loader": "^2.3.0",
-    "sharp": "^0.29.0",
-    "webp-loader": "^0.6.0"
+    "pino": "6.13.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "responsive-loader": "2.3.0",
+    "sharp": "0.29.0",
+    "webp-loader": "0.6.0"
   },
   "devDependencies": {
     "@babel/core": "7.15.0",

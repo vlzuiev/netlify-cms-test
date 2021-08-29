@@ -28,12 +28,12 @@ const getPathsForPosts = () => {
  */
 const nextConfig = {
   /* config options here */
-  webpack: (configuration) => {
-    configuration.module.rules.push({
+  webpack: (config) => {
+    config.module.rules.push({
       test: /\.md$/,
       use: 'frontmatter-markdown-loader',
     });
-    return configuration;
+    return config;
   },
   exportPathMap: async function (defaultPathMap) {
     return {

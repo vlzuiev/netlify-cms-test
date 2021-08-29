@@ -1,20 +1,20 @@
 import React, { FC, useEffect } from 'react';
 
+import { GetStaticPropsResult } from 'next';
+import { MDXRemote } from 'next-mdx-remote';
 import Head from 'next/head';
 import Link from 'next/link';
 import Script from 'next/script';
 
-import { attributes } from '../content/home.md';
+import { HomeData, loadHomeData } from '../data/home';
 
-const Home: FC = () => {
-  const { title, cats } = attributes;
-
+const Home: FC<HomeData> = ({ title, source }) => {
   useEffect(() => {
-    const thisWindow = window as any;
-    if (thisWindow.netlifyIdentity) {
-      thisWindow.netlifyIdentity.on('init', (user) => {
+    const w = window as any;
+    if (w.netlifyIdentity) {
+      w.netlifyIdentity.on('init', (user) => {
         if (!user) {
-          thisWindow.netlifyIdentity.on('login', () => {
+          w.netlifyIdentity.on('login', () => {
             document.location.href = '/admin/';
           });
         }
@@ -41,23 +41,21 @@ const Home: FC = () => {
       </nav>
       <article>
         <h1>{title}</h1>
-        <ul>
-          {cats.map((cat, k) => (
-            <li key={k}>
-              <h2>{cat.name}</h2>
-              <p>{cat.description}</p>
-            </li>
-          ))}
-        </ul>
       </article>
-      <style jsx>{`
-        h1,
-        div {
-          text-align: center;
-        }
-      `}</style>
+      <MDXRemote {...source} />
     </>
   );
 };
+
+export async function getStaticProps(): Promise<GetStaticPropsResult<HomeData>> {
+  const { title, source } = await loadHomeData();
+
+  return {
+    props: {
+      title,
+      source,
+    },
+  };
+}
 
 export default Home;

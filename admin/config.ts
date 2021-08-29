@@ -1,11 +1,16 @@
 import { CmsConfig } from 'netlify-cms-core';
 
 export const config: CmsConfig = {
+  local_backend: true,
   backend: {
-    name: 'github',
-    branch: 'master',
-    repo: 'vlzuiev/netlify-cms-test',
+    name: 'git-gateway',
+    branch: 'main',
   },
+  // backend: {
+  //   name: 'github',
+  //   branch: 'master',
+  //   repo: 'vlzuiev/netlify-cms-test',
+  // },
   media_folder: 'public/img',
   public_folder: 'img',
   slug: {
@@ -17,11 +22,12 @@ export const config: CmsConfig = {
     {
       name: 'pages',
       label: 'Pages',
+      extension: 'mdx',
       files: [
         {
           label: 'Home',
           name: 'home',
-          file: 'content/home.md',
+          file: 'content/home.mdx',
           fields: [
             { label: 'Title', name: 'title', widget: 'string' },
             { label: 'Publish Date', name: 'date', widget: 'datetime' },
@@ -31,7 +37,7 @@ export const config: CmsConfig = {
         {
           label: 'About',
           name: 'about',
-          file: 'content/about.md',
+          file: 'content/about.mdx',
           fields: [
             { label: 'Title', name: 'title', widget: 'string' },
             { label: 'Publish Date', name: 'date', widget: 'datetime' },
