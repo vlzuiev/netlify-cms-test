@@ -81,6 +81,7 @@
     "react/jsx-uses-react": "error",
     "react/jsx-pascal-case": "error",
     "react/jsx-no-useless-fragment": "error",
-    "react/no-string-refs": "error"
+    "react/no-string-refs": "error",
+    "react/display-name": "off"
   }
 }

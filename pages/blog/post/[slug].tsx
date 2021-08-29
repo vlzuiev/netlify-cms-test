@@ -12,12 +12,12 @@ const Post: NextPage<PostProps> = ({ blogpost }) => {
     html,
     attributes: { thumbnail, title },
   } = blogpost.default;
-
+  console.log(blogpost);
   return (
     <>
       <article>
         <h1>{title}</h1>
-        <img src={thumbnail} width="100" height="100" />
+        <img src={thumbnail} />
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </article>
       <style jsx>{`

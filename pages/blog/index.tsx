@@ -30,9 +30,7 @@ const Blog: NextPage<BlogProps> = (props) => {
         return (
           <Link key={post.attributes.title} href={`blog/post/${post.slug}`}>
             <a>
-              <img
-                src={require('../../public/img/activate_deactivate.png?resize&sizes[]=640&sizes[]=740&sizes[]=828&sizes[]=1080&sizes[]=1920&sizes[]=2048&sizes[]=3840&format=webp')}
-              />
+              <img src={post.attributes.thumbnail} />
               <h2>{post.attributes.title}</h2>
             </a>
           </Link>
